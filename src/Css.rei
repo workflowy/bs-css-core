@@ -105,6 +105,8 @@ let unsafe: (string, 'a) => rule;
 /*** Builds a rule from a descriptor and a list of rules. */
 let selector: (string, list(rule)) => rule;
 
+let stringsOfProperty: rule => (string, string);
+
 
 /***
  * Marks a rule as important. E.g.: { color: red !important }

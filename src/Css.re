@@ -22,6 +22,13 @@ let rec makeDict = ruleset => {
   ruleset |> List.map(toJs) |> Js.Dict.fromList |> Js.Json.object_;
 };
 
+let stringsOfProperty = rule =>
+  switch (rule) {
+  | Property(name, value) => (name, value)
+  | Selector(_, _) => ("", "")
+  | Keyframes(_, _) => ("", "")
+  };
+
 let join = (sep, strings) => {
   let rec j = acc =>
     fun
