@@ -859,6 +859,33 @@ let textAlign = v =>
     },
   );
 
+type verticalAlign =
+  | Baseline
+  | Sub
+  | Super
+  | TextTop
+  | TextBottom
+  | Middle
+  | Top
+  | Bottom
+  | Custom(cssunit);
+
+let verticalAlign = v =>
+  Property(
+    "verticalAlign",
+    switch (v) {
+    | Baseline => "baseline"
+    | Sub => "sub"
+    | Super => "super"
+    | TextTop => "text-top"
+    | TextBottom => "text-bottom"
+    | Middle => "middle"
+    | Top => "top"
+    | Bottom => "bottom"
+    | Custom(unit) => unit
+    },
+  );
+
 type textDecoration =
   | None
   | Underline(color)

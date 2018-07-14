@@ -1012,6 +1012,19 @@ type textAlign =
  */
 let textAlign: textAlign => rule;
 
+type verticalAlign =
+  | Baseline
+  | Sub
+  | Super
+  | TextTop
+  | TextBottom
+  | Middle
+  | Top
+  | Bottom
+  | Custom(cssunit);
+
+let verticalAlign: verticalAlign => rule;
+
 
 /***
  * The text-indent CSS property specifies the amount of indentation (empty space) that is put before lines of text in a block.
