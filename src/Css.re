@@ -29,6 +29,8 @@ let stringsOfProperty = rule =>
   | Keyframes(_, _) => ("", "")
   };
 
+let stringOfUnit = unit => unit;
+
 let join = (sep, strings) => {
   let rec j = acc =>
     fun

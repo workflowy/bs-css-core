@@ -107,6 +107,8 @@ let selector: (string, list(rule)) => rule;
 
 let stringsOfProperty: rule => (string, string);
 
+let stringOfUnit: cssunit => string;
+
 
 /***
  * Marks a rule as important. E.g.: { color: red !important }
