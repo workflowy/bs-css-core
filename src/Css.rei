@@ -297,6 +297,8 @@ let currentColor: color;
  */
 let transparent: color;
 
+let inherit_: color;
+
 /* CSS Level 1 colors. */
 let black: color;
 

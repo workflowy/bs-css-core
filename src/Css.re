@@ -77,6 +77,8 @@ let currentColor = "currentColor";
 
 let transparent = "transparent";
 
+let inherit_ = "inherit";
+
 /* CSS Level 1 */
 let black = "black";
 
