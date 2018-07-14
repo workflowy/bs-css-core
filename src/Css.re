@@ -554,12 +554,14 @@ let repeatingRadialGradient = (shape, v, h, extent, stops) => {
 };
 
 type image =
+  | None
   | Url(string)
   | Gradient(gradient)
   | Element(string);
 
 let _encodeImage =
   fun
+  | None => "none"
   | Url(url) => {j|url($url)|j}
   | Gradient(gradient) => gradient
   | Element(selector) => {j|element($selector)|j};
@@ -656,7 +658,7 @@ let listStylePopsition = value => {
 
 /* BACKGROUND */
 let backgroundImage = value =>
-  Property("backgroundImage", _encodeImage(Url(value)));
+  Property("backgroundImage", _encodeImage(value));
 
 let backgroundGradient = value => Property("backgroundImage", value);
 
@@ -743,7 +745,7 @@ let backgroundRepeat = v =>
 type background =
   | None
   | Color(color)
-  | Image(string)
+  | Image(image)
   | Gradient(gradient);
 
 let background = v =>
@@ -752,7 +754,7 @@ let background = v =>
     switch (v) {
     | None => "none"
     | Color(color) => color
-    | Image(url) => _encodeImage(Url(url))
+    | Image(image) => _encodeImage(image)
     | Gradient(gradient) => gradient
     },
   );

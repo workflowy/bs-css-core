@@ -704,6 +704,7 @@ let repeatingRadialGradient:
  * https://developer.mozilla.org/en-US/docs/Web/CSS/image
  */
 type image =
+  | None
   | Url(string)
   | Gradient(gradient)
   | Element(string);
@@ -781,7 +782,7 @@ let listStylePopsition: listStylePosition => rule;
  * The background-image CSS property sets one or more background images on an element.
  * https://developer.mozilla.org/en-US/docs/Web/CSS/background-image
  */
-let backgroundImage: string => rule;
+let backgroundImage: image => rule;
 
 
 /***
@@ -861,7 +862,7 @@ let backgroundRepeat: backgroundRepeat => rule;
 type background =
   | None
   | Color(color)
-  | Image(string)
+  | Image(image)
   | Gradient(gradient);
 
 
