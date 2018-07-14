@@ -1037,7 +1037,7 @@ let textIndent: cssunit => rule;
  * The text-shadow CSS property adds shadows to text.
  * https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow
  */
-let textShadow: (cssunit, cssunit, color) => rule;
+let textShadow: (~x: int=?, ~y: int=?, ~blur: int=?, color) => rule;
 
 type textTransform =
   | None

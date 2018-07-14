@@ -835,8 +835,8 @@ let fontVariant = value => {
   Property("fontVariant", value);
 };
 
-let textShadow = (x, y, color) =>
-  Property("textShadow", {j|$(x) $(y) $(color)|j});
+let textShadow = (~x=0, ~y=0, ~blur=0, color) =>
+  Property("textShadow", {j|$(x)px $(y)px $(blur)px $(color)|j});
 
 let textIndent = stringProp("textIndent");
 
