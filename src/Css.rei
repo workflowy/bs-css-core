@@ -912,6 +912,8 @@ let fontStyle: fontStyle => rule;
 type fontWeight =
   | Normal
   | Bold
+  | Lighter
+  | Bolder
   | W100
   | W200
   | W300
@@ -920,7 +922,10 @@ type fontWeight =
   | W600
   | W700
   | W800
-  | W900;
+  | W900
+  | Inherit
+  | Initial
+  | Unset;
 
 
 /***

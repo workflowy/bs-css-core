@@ -782,6 +782,8 @@ let fontStyle = v =>
 type fontWeight =
   | Normal
   | Bold
+  | Lighter
+  | Bolder
   | W100
   | W200
   | W300
@@ -790,7 +792,10 @@ type fontWeight =
   | W600
   | W700
   | W800
-  | W900;
+  | W900
+  | Inherit
+  | Initial
+  | Unset;
 
 let fontWeight = v =>
   Property(
@@ -798,6 +803,8 @@ let fontWeight = v =>
     switch (v) {
     | Normal => "normal"
     | Bold => "bold"
+    | Lighter => "lighter"
+    | Bolder => "bolder"
     | W100 => "100"
     | W200 => "200"
     | W300 => "300"
@@ -807,6 +814,9 @@ let fontWeight = v =>
     | W700 => "700"
     | W800 => "800"
     | W900 => "900"
+    | Inherit => "inherit"
+    | Initial => "initial"
+    | Unset => "unset"
     },
   );
 
