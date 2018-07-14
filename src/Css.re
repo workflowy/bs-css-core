@@ -389,6 +389,8 @@ type cssunit = string;
 
 let px = i => {j|$(i)px|j};
 
+let pt = i => {j|$(i)pt|j};
+
 let pct = i => {j|$(i)%|j};
 
 let rem = i => {j|$(i)rem|j};

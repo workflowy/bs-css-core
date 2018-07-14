@@ -153,6 +153,13 @@ let px: int => cssunit;
 
 
 /***
+ * Returns a length in points.
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/length#pt
+ */
+let pt: int => cssunit;
+
+
+/***
  * Returns a length in percentual.
  * https://developer.mozilla.org/en-US/docs/Web/CSS/percentage
  */
