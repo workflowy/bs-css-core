@@ -767,7 +767,8 @@ let fontSize = stringProp("fontSize");
 type fontStyle =
   | Normal
   | Italic
-  | Oblique;
+  | Oblique
+  | Inherit;
 
 let fontStyle = v =>
   Property(
@@ -776,6 +777,7 @@ let fontStyle = v =>
     | Normal => "normal"
     | Italic => "italic"
     | Oblique => "oblique"
+    | Inherit => "inherit"
     },
   );
 

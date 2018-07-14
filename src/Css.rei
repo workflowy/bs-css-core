@@ -899,7 +899,8 @@ let fontSize: cssunit => rule;
 type fontStyle =
   | Normal
   | Italic
-  | Oblique;
+  | Oblique
+  | Inherit;
 
 
 /***
