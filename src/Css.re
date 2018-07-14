@@ -1373,7 +1373,11 @@ let shadow = (~x=0, ~y=0, ~blur=0, ~spread=0, ~inset=false, color) => {
 
 let boxShadow = stringProp("boxShadow");
 
-let boxShadows = shadows => Property("boxShadow", join(", ", shadows));
+let boxShadows = shadows =>
+  switch (shadows) {
+  | [] => Property("boxShadow", "none")
+  | shadows => Property("boxShadow", join(", ", shadows))
+  };
 
 /* ANIMATION */
 let animationName = keyframes => Keyframes("animationName", keyframes);
